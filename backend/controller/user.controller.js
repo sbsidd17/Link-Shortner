@@ -3,7 +3,7 @@ import User from "../model/user.model.js";
 
 const signup = async (req, res) => {
   const { firstName, lastName, email, password } = req.body;
-  if (!firstName || lastName || !email || !password) {
+  if (!firstName || !lastName || !email || !password) {
     res.status(500).json({
       success: false,
       msg: "All Fields Required",
@@ -78,6 +78,26 @@ const login = async (req, res) => {
   }
 };
 
+const logout = (req, res) => {
+  try {
+    res.cookie("jwtToken", null, {
+      secure: true,
+      maxAge: 0,
+      httpOnly: true,
+    });
+
+    res.status(200).json({
+      success: true,
+      msg: "User logged out successfully",
+    });
+  } catch (error) {
+    return res.status(400).json({
+      success: false,
+      msg: "Error In LogOut",
+    });
+  }
+};
+
 const dashboard = async (req, res)=>{
     const id = req.user.id;
      const data = await User.findById(id).populate("userLinks.link")
@@ -89,4 +109,4 @@ const dashboard = async (req, res)=>{
 
 }
 
-export { signup, login, dashboard };
+export { signup, login, dashboard, logout };
