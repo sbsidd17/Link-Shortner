@@ -2,7 +2,7 @@ import jwt from "jsonwebtoken";
 import "dotenv/config";
 
 const isUser = (req, res, next) => {
-  const jwtToken = req.cookies.jwtToken || localStorage.getItem("jwtToken");
+  const jwtToken = req.cookies.jwtToken
 
   if (jwtToken) {
     console.log("token found")
