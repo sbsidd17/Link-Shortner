@@ -2,18 +2,19 @@ import mongoose from "mongoose";
 import User from "../model/user.model.js";
 
 const signup = async (req, res) => {
-  const { name, email, password } = req.body;
-  if (!name || !email || !password) {
+  const { firstName, lastName, email, password } = req.body;
+  if (!firstName || lastName || !email || !password) {
     res.status(500).json({
       success: false,
       msg: "All Fields Required",
     });
   }
-  const avatar = `https://ui-avatars.com/api/?name=${name}`;
+  const avatar = `https://ui-avatars.com/api/?name=${firstName}+${lastName}`;
 
   try {
     const user = new User({
-      name,
+      firstName,
+      lastName,
       email,
       password,
       avatar,
