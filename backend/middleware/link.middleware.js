@@ -5,7 +5,7 @@ const isUser = (req, res, next) => {
   const jwtToken = req.cookies.jwtToken
 
   if (jwtToken) {
-    console.log("token found")
+    console.log(jwtToken)
     try {
         const decode = jwt.verify(jwtToken, process.env.JWT_SECRATE);
         req.user = decode;

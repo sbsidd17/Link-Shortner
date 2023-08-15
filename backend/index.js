@@ -5,15 +5,14 @@ import dbConnect from "./config/dbConnect.js";
 import cors from "cors"
 import userRoutes from "./routes/user.route.js";
 import cookieParser from "cookie-parser";
+import bodyParser from "body-parser";
 
 const app = express();
 app.use(cors({
-    origin: process.env.CLIENT_URL,
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    allowedHeaders: 'Content-Type,Authorization',
+    origin: "https://sdlinks.netlify.app",
     credentials:true
   }));
-  
+app.use(bodyParser.urlencoded({extended:true}))  
 app.use(express.json())
 app.use(cookieParser())
 

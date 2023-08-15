@@ -18,7 +18,7 @@ const signup = async (req, res) => {
       email,
       password,
       avatar,
-      userLinks:[]
+      userLinks: [],
     });
 
     await user.save();
@@ -52,17 +52,18 @@ const login = async (req, res) => {
       const jwtToken = user.generateJwtToken();
 
       res.cookie("jwtToken", jwtToken, {
-        maxAge: 1 * 24 * 60 * 60 * 1000,
+        maxAge: 10 * 24 * 60 * 60 * 1000,
         httpOnly: true,
+        // secure: true, // Make sure this is set for HTTPS
+        // sameSite: "none", // Add this line for cross-origin requests
+        // path: '/'
       });
-
 
       res.status(200).json({
         success: true,
         msg: "LoggedIn Successfully",
         jwtToken,
       });
-
     } else {
       res.status(400).json({
         success: false,
@@ -98,15 +99,14 @@ const logout = (req, res) => {
   }
 };
 
-const dashboard = async (req, res)=>{
-    const id = req.user.id;
-     const data = await User.findById(id).populate("userLinks.link")
-     res.status(200).json({
-        success:true,
-        msg: "Welcome To Dashboard",
-        data
-    })
-
-}
+const dashboard = async (req, res) => {
+  const id = req.user.id;
+  const data = await User.findById(id).populate("userLinks.link");
+  res.status(200).json({
+    success: true,
+    msg: "Welcome To Dashboard",
+    data,
+  });
+};
 
 export { signup, login, dashboard, logout };
