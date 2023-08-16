@@ -9,7 +9,7 @@ import bodyParser from "body-parser";
 
 const app = express();
 app.use(cors({
-    origin: "https://sdlinks.netlify.app",
+    origin: "https://sdlinks.vercel.app",
     credentials:true
   }));
 app.use(bodyParser.urlencoded({extended:true}))  
