@@ -9,7 +9,7 @@ import bodyParser from "body-parser";
 
 const app = express();
 app.use(cors({
-    origin: "https://purple-psychiatrist-dyviy.pwskills.app:3000",
+    origin: "https://sdlinks.netlify.app/",
     credentials:true
   }));
 app.use(bodyParser.urlencoded({extended:true}))  
