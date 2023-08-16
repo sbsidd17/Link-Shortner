@@ -6,7 +6,7 @@ const userRoutes = express.Router()
 
 userRoutes.post("/signup", signup)
 userRoutes.post("/login", login)
-userRoutes.get("/dashboard", isLogin, dashboard)
+userRoutes.post("/dashboard", isLogin, dashboard)
 userRoutes.get("/logout", logout)
 
 export default userRoutes;

@@ -63,6 +63,7 @@ const login = async (req, res) => {
         success: true,
         msg: "LoggedIn Successfully",
         jwtToken,
+        user
       });
     } else {
       res.status(400).json({

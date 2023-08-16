@@ -2,10 +2,10 @@ import jwt from "jsonwebtoken";
 import "dotenv/config";
 
 const isUser = (req, res, next) => {
-  const jwtToken = req.cookies.jwtToken
+  const {jwtToken} = req.body;
 
   if (jwtToken) {
-    console.log(jwtToken)
+    console.log("token receved")
     try {
         const decode = jwt.verify(jwtToken, process.env.JWT_SECRATE);
         req.user = decode;

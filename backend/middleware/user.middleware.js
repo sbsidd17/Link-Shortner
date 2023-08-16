@@ -2,7 +2,7 @@ import jwt from "jsonwebtoken";
 import "dotenv/config";
 
 const isLogin = (req, res, next) => {
-  const jwtToken = req.cookies.jwtToken;
+  const {jwtToken} = req.body;
 
   if (!jwtToken) {
     res.status(400).json({
