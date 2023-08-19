@@ -6,9 +6,8 @@ import moment from "moment-timezone";
 import { backendUrl } from "../config/config";
 import {FcBinoculars} from "react-icons/fc"
 
-function LinkCard({ linkData }) {
+function LinkCard({ link }) {
   const [copied, setCopied] = useState(false);
-  const link = linkData.link;
   const shortLink = `${backendUrl}/${link.shortId}`;
   const createdAt = link.createdAt;
   const indianTime = moment(createdAt).tz("Asia/Kolkata");
