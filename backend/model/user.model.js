@@ -27,14 +27,6 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    userLinks: [
-      {
-        link: {
-          type: mongoose.Schema.Types.ObjectId,
-          ref: "links",
-        },
-      },
-    ],
     otp: String,
     otpExpiry: Date,
     forgotPasswordToken: String,

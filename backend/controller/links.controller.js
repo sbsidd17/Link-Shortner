@@ -13,21 +13,22 @@ const generateShortLink = async (req, res) => {
   }
 
   const shortId = nanoid(10);
-
+  let userId = ""
   try {
+    if (req.user) {
+      const id = req.user.id;
+      const user = await User.findById(id);
+      userId = user._id
+    }
+
     const link = await Links.create({
       redirectUrl: url,
       shortId,
+      userId,
       clickCounts: [],
       totalClicks: 0,
     });
     
-    if (req.user) {
-      const id = req.user.id;
-      const user = await User.findById(id);
-      user.userLinks.push({ link: link._id });
-      user.save();
-    }
 
     res.status(200).json({
       success: true,

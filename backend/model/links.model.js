@@ -10,6 +10,9 @@ const linkSchema = new mongoose.Schema({
         type: String,
         required:true
     },
+    userId: {
+        type:String,
+    },
     clickCounts:[
         {
             clickedOn: Date

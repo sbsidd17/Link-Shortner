@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import Links from "../model/links.model.js";
 import User from "../model/user.model.js";
 
 const signup = async (req, res) => {
@@ -101,8 +102,8 @@ const logout = (req, res) => {
 };
 
 const dashboard = async (req, res) => {
-  const id = req.user.id;
-  const data = await User.findById(id).populate("userLinks.link");
+  const userId = req.user.id;
+  const data = await Links.find({userId})
   res.status(200).json({
     success: true,
     msg: "Welcome To Dashboard",
