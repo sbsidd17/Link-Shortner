@@ -50,7 +50,7 @@ function Dashbaord() {
       loading === true ? <Loading /> : ""
     }
     <div className="flex flex-col flex-wrap">
-      <div className="flex gap-10 text-white p-10">
+      <div className="flex gap-10 flex-wrap text-white p-10">
         <div className="flex flex-col justify-center items-center bg-[#27293d] p-10 rounded-xl">
           <div className="flex justify-between items-center gap-10 ">
             <div className="flex flex-col gap-5">
