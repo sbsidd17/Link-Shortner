@@ -38,7 +38,7 @@ function Login() {
       const user = JSON.stringify(response.data.user)
       localStorage.setItem("jwtToken", jwtToken)
       localStorage.setItem("user", user)
-      navigate("/dashboard")
+      navigate("/")
       window.location.reload()
     } catch (error) {
       toast.error("Something Went Wrong")

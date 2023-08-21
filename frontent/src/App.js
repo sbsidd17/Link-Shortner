@@ -11,6 +11,7 @@ import { useEffect, useState } from "react";
 import NotFoundPage from "./pages/NotFoundPage";
 import Navbar from "./components/Navbar";
 import Profile from "./pages/Profile";
+import AdminDashboard from "./pages/AdminDashboard";
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route element={<ProtectedRoutes isLoggedIn={isLoggedIn} />}>
         <Route path="/dashboard" element={<Dashbaord />} />
+        <Route path="/admin-dashboard" element={<AdminDashboard />} />
         <Route path="/profile" element={<Profile />} />
         </Route>
         <Route path="*" element={<NotFoundPage />} />

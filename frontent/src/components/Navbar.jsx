@@ -14,6 +14,9 @@ function classNames(...classes) {
 }
 
 export default function Navbar({ isLoggedIn, setIsLoggedIn }) {
+  const [name, setName] = useState("UserName");
+  const [avatar, setAvatar] = useState("https://icon-library.com/images/username-icon/username-icon-28.jpg");
+  const [role, setRole] = useState("user")
   const navigation = [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
@@ -26,10 +29,12 @@ export default function Navbar({ isLoggedIn, setIsLoggedIn }) {
       name: isLoggedIn === true ? "Dashboard" : "SignUp",
       href: isLoggedIn === true ? "/dashboard" : "/signup",
     },
+    {
+      name: role === "admin" ? "AdminDashboard" : "",
+      href: role === "admin" ? "/admin-dashboard" : "",
+    },
   ];
 
-  const [name, setName] = useState("UserName");
-  const [avatar, setAvatar] = useState("https://icon-library.com/images/username-icon/username-icon-28.jpg");
 
   useEffect(() => {
     const userJSON = localStorage.getItem("user");
@@ -38,6 +43,7 @@ export default function Navbar({ isLoggedIn, setIsLoggedIn }) {
       // console.log(user)
       setName(`${user.firstName} ${user.lastName}`);
       setAvatar(user.avatar);
+      setRole(user.role)
     }
   }, []);
 
@@ -223,25 +229,26 @@ export default function Navbar({ isLoggedIn, setIsLoggedIn }) {
           <Disclosure.Panel className="sm:hidden">
             <div className="space-y-1 px-2 pb-3 pt-2">
               {navigation.map((item) => (
-               <Link
-                 to={item.href}
-                 >
-                <Disclosure.Button
-                  key={item.name}
-                  as="Link"
+                <Link
+                key={item.name}
                   to={item.href}
-                  onClick={item.name === "LogOut" ? signoutHandler : ""}
-                  className={classNames(
-                    item.current
-                      ? "bg-gray-900 text-white"
-                      : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                    "block rounded-md px-3 py-2 text-base font-medium"
-                  )}
-                  aria-current={item.current ? "page" : undefined}
                 >
-                  {item.name}
-                </Disclosure.Button>
-                 </Link>
+                  <Disclosure.Button
+                    key={item.name}
+                    as="Link"
+                    to={item.href}
+                    onClick={item.name === "LogOut" ? signoutHandler : ""}
+                    className={classNames(
+                      item.current
+                        ? "bg-gray-900 text-white"
+                        : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                      "block rounded-md px-3 py-2 text-base font-medium"
+                    )}
+                    aria-current={item.current ? "page" : undefined}
+                  >
+                    {item.name}
+                  </Disclosure.Button>
+                </Link>
               ))}
             </div>
           </Disclosure.Panel>
