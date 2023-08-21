@@ -27,6 +27,11 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    role: {
+      type: String,
+      enum: ['user', 'admin'], // Allowed role values
+      default: 'user', // Set the default role to 'user'
+    },
     otp: String,
     otpExpiry: Date,
     forgotPasswordToken: String,
@@ -44,7 +49,7 @@ userSchema.pre("save", async function (next) {
 });
 
 userSchema.methods.generateJwtToken = function () {
-  const jwtToken = jwt.sign({ id: this._id }, process.env.JWT_SECRATE, {
+  const jwtToken = jwt.sign({ id: this._id, role: this.role }, process.env.JWT_SECRATE, {
     expiresIn: "24h",
   });
   return jwtToken;

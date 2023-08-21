@@ -63,7 +63,9 @@ const redirect = async (req, res) => {
 
     await link.save(); // Save the updated link with the new click count
 
-    res.redirect(link.redirectUrl);
+    const targetUrl = link.redirectUrl;
+
+    res.render('adView', { targetUrl });
   } catch (error) {
     res.status(500).json({
       success: false,
@@ -73,4 +75,28 @@ const redirect = async (req, res) => {
   }
 };
 
-export { generateShortLink, redirect };
+const getAllLinks = async (req, res) => {
+  const { limit, page } = req.params;
+
+  const skip = (page - 1) * limit;
+  try {
+    const totalCount = await Links.countDocuments({});
+    const allLinks = await Links.find({})
+      .sort({ _id: -1 })  // Sort by _id in descending order
+      .limit(limit)
+      .skip(skip);
+
+    res.status(200).json({
+      success: true,
+      totalLinks: totalCount,
+      allLinks: allLinks
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      error: error.message,
+    });
+  }
+};
+
+export { generateShortLink, redirect, getAllLinks };

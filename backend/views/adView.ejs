@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html class="dark bg-gray-900">
+  <head>
+    <title>Ad Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body>
+    <nav class="relative bg-white shadow dark:bg-gray-800">
+      <div
+        class="container px-6 py-4 mx-auto md:flex md:justify-between md:items-center"
+      >
+        <div class="flex items-center justify-between">
+          <a href="https://sdlinks.vercel.app">
+            <img class="w-auto h-30" src="./logo.png" alt="" />
+          </a>
+          <div class="text-white text-2xl">SdLinks Blog</div>
+        </div>
+      </div>
+      <script type="text/javascript">
+        atOptions = {
+          key: "c380aff6cd2e01091ae816fe098edfac",
+          format: "iframe",
+          height: 60,
+          width: 468,
+          params: {},
+        };
+        document.write(
+          "<scr" +
+            'ipt type="text/javascript" src="http' +
+            (location.protocol === "https:" ? "s" : "") +
+            '://www.profitablecreativeformat.com/c380aff6cd2e01091ae816fe098edfac/invoke.js"></scr' +
+            "ipt>"
+        );
+      </script>
+    </nav>
+    <!-- Countdown code -->
+    <div class="flex justify-center items-center p-10">
+      <button
+        id="timerBtn"
+        class="px-6 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-lg hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80"
+      >
+        Wait for : <span id="timer">20 </span>
+        <tr></tr>
+        Seconds to Continue
+      </button>
+      <button
+        class="px-6 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-lg hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80"
+        id="continueButton"
+        style="display: none"
+      >
+        Continue
+      </button>
+    </div>
+
+    <script>
+      // Get references to timer and continue button elements
+    
+      const timerBtn = document.getElementById("timerBtn");
+      const timerElement = document.getElementById("timer");
+      const continueButton = document.getElementById("continueButton");
+
+      let countdown = 20;
+
+      // Function to update timer display
+      function updateTimerDisplay() {
+        timerElement.textContent = countdown;
+      }
+
+      // Function to start the countdown
+      function startCountdown() {
+        updateTimerDisplay();
+
+        // Countdown interval
+        const interval = setInterval(() => {
+          countdown--;
+
+          if (countdown <= 0) {
+            clearInterval(interval);
+            timerElement.style.display = "none";
+            timerBtn.style.display = "none";
+            continueButton.style.display = "block";
+            document.querySelector("#nextBtn").style.display = "block";
+          } else {
+            updateTimerDisplay();
+          }
+        }, 1000);
+      }
+
+      // Add event listener to the continue button
+      continueButton.addEventListener("click", () => {
+        // Perform action when the button is clicked
+        window.location.href = "#nextBtnDiv";
+      });
+
+      // Start the countdown when the page loads
+      startCountdown();
+    </script>
+
+    <section class="bg-white dark:bg-gray-900">
+      <div class="container px-6 py-10 mx-auto">
+        <div class="lg:flex lg:-mx-6">
+          <div class="lg:w-3/4 lg:px-6">
+            <img
+              class="object-cover object-center w-full h-80 xl:h-[28rem] rounded-xl"
+              src="https://images.unsplash.com/photo-1624996379697-f01d168b1a52?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+              alt=""
+            />
+
+            <div>
+              <p class="mt-6 text-sm text-blue-500 uppercase">Want to know</p>
+
+              <h1
+                class="max-w-lg mt-4 text-2xl font-semibold leading-tight text-gray-800 dark:text-white"
+              >
+                What do you want to know about Crypto Trading
+              </h1>
+
+              <div class="container mx-auto p-8">
+                <h1 class="text-white text-xl font-bold mb-4">
+                  Navigating the Seas of Crypto Trading: Strategies, Risks, and
+                  Opportunities
+                </h1>
+
+                <p class="text-white mb-6">
+                  The world of cryptocurrency has transformed the financial
+                  landscape, giving rise to new opportunities for investors and
+                  traders alike. Crypto trading, the art of buying and selling
+                  digital assets for profit, has gained substantial attention in
+                  recent years. As the market continues to evolve, it's crucial
+                  to understand the intricacies, strategies, risks, and
+                  potential rewards associated with crypto trading.
+                </p>
+
+                <h2 class="text-white text-2xl font-semibold mb-4">
+                  1. Understanding Cryptocurrency Trading
+                </h2>
+                <p class="text-white mb-4">
+                  Crypto trading involves the exchange of digital assets, such
+                  as Bitcoin, Ethereum, and a multitude of altcoins, on various
+                  online platforms. Unlike traditional markets, cryptocurrency
+                  exchanges operate 24/7, providing traders with constant
+                  opportunities to capitalize on market movements.
+                </p>
+
+                <h2 class="text-white text-2xl font-semibold mb-4">
+                  2. Types of Crypto Trading
+                </h2>
+                <ul class="text-white list-disc list-inside mb-4">
+                  <li>
+                    <strong>Day Trading:</strong> Day traders execute multiple
+                    trades within a single day, profiting from short-term price
+                    fluctuations. This strategy requires a deep understanding of
+                    technical analysis, chart patterns, and market indicators.
+                  </li>
+                  <li>
+                    <strong>Swing Trading:</strong> Swing traders aim to capture
+                    price movements over a few days or weeks. They rely on both
+                    technical and fundamental analysis to identify trends and
+                    make informed decisions.
+                  </li>
+                  <li>
+                    <strong>Scalping:</strong> Scalpers make quick, small trades
+                    to capitalize on minor price fluctuations. This strategy
+                    requires quick decision-making and a keen understanding of
+                    market liquidity.
+                  </li>
+                  <li>
+                    <strong>HODLing:</strong> Long-term investors, often
+                    referred to as "HODLers," buy and hold cryptocurrencies for
+                    extended periods, believing in their potential for
+                    significant growth over time.
+                  </li>
+                </ul>
+
+                <h2 class="text-white text-2xl font-semibold mb-4">
+                  3. Essential Strategies for Success
+                </h2>
+                <ul class="text-white list-disc list-inside mb-4">
+                  <li>
+                    <strong>Technical Analysis:</strong> Understanding price
+                    charts, candlestick patterns, and technical indicators can
+                    help traders identify potential entry and exit points.
+                  </li>
+                  <li>
+                    <strong>Fundamental Analysis:</strong> Evaluating the
+                    underlying factors that influence a cryptocurrency's value,
+                    such as technology, adoption, and market sentiment, is
+                    crucial for making informed trading decisions.
+                  </li>
+                  <li>
+                    <strong>Risk Management:</strong> Setting stop-loss and
+                    take-profit levels, diversifying your portfolio, and only
+                    trading with funds you can afford to lose are essential to
+                    mitigate risks.
+                  </li>
+                  <li>
+                    <strong>Emotional Discipline:</strong> Emotions can cloud
+                    judgment and lead to impulsive decisions. Developing a
+                    disciplined mindset is vital for successful crypto trading.
+                  </li>
+                </ul>
+
+                <h2 class="text-white text-2xl font-semibold mb-4">
+                  4. Risk Factors
+                </h2>
+                <ul class="text-white list-disc list-inside mb-4">
+                  <li>
+                    <strong>Volatility:</strong> Cryptocurrencies are infamous
+                    for their extreme price volatility. While this volatility
+                    can present lucrative opportunities, it also carries the
+                    risk of substantial losses.
+                  </li>
+                  <li>
+                    <strong>Regulatory Uncertainty:</strong> The regulatory
+                    environment for cryptocurrencies varies widely across
+                    jurisdictions. Sudden changes in regulations can impact the
+                    market and traders' activities.
+                  </li>
+                  <li>
+                    <strong>Security Concerns:</strong> Cryptocurrency exchanges
+                    and wallets are susceptible to hacking and cyberattacks.
+                    Traders must prioritize security by using reputable
+                    platforms and adopting strong security practices.
+                  </li>
+                  <li>
+                    <strong>Market Manipulation:</strong> The relatively nascent
+                    nature of the crypto market makes it susceptible to price
+                    manipulation by whales (individuals or entities with large
+                    holdings).
+                  </li>
+                </ul>
+
+                <h2 class="text-white text-2xl font-semibold mb-4">
+                  5. Tools and Resources
+                </h2>
+                <ul class="text-white list-disc list-inside mb-4">
+                  <li>
+                    <strong>Crypto Exchanges:</strong> Choose reputable
+                    exchanges with user-friendly interfaces, a wide range of
+                    assets, and robust security measures.
+                  </li>
+                  <li>
+                    <strong>Trading Bots:</strong> Automated trading bots can
+                    execute trades based on predefined strategies, helping
+                    traders capitalize on opportunities even when they're not
+                    actively monitoring the market.
+                  </li>
+                  <li>
+                    <strong>Educational Resources:</strong> Countless online
+                    courses, forums, and blogs offer insights into crypto
+                    trading strategies, technical analysis, and market trends.
+                  </li>
+                </ul>
+
+                <p class="text-white mb-6"><strong>Conclusion</strong></p>
+                <p class="text-white mb-6">
+                  Crypto trading presents a dynamic and potentially profitable
+                  endeavor for those willing to invest time, effort, and
+                  resources into mastering the art. Success in this arena
+                  requires a combination of technical knowledge, analytical
+                  skills, risk management, and emotional discipline. As the
+                  crypto market continues to mature, staying informed about
+                  developments, regulations, and emerging technologies is key to
+                  navigating its twists and turns successfully. Remember, while
+                  the journey might be challenging, the rewards can be
+                  substantial for those who approach crypto trading with
+                  dedication and a solid understanding of its nuances.
+                </p>
+              </div>
+
+              <div class="flex items-center mt-6">
+                <img
+                  class="object-cover object-center w-10 h-10 rounded-full"
+                  src="https://res.cloudinary.com/ddshtdrse/image/upload/v1691097978/crxhsea3emsklgbovxzm.jpg"
+                  alt=""
+                />
+
+                <div class="mx-4">
+                  <h1 class="text-sm text-gray-700 dark:text-gray-200">
+                    Shuaib Siddiqui
+                  </h1>
+                  <p class="text-sm text-gray-500 dark:text-gray-400">
+                    Lead Developer
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8 lg:w-1/4 lg:mt-0 lg:px-6">
+            <div>
+              <h3 class="text-blue-500 capitalize">Design instument</h3>
+
+              <a
+                href="#"
+                class="block mt-2 font-medium text-gray-700 hover:underline hover:text-gray-500 dark:text-gray-400"
+              >
+                How to raise $100k+ by using blox ui kit on your design
+              </a>
+            </div>
+
+            <hr class="my-6 border-gray-200 dark:border-gray-700" />
+
+            <div>
+              <h3 class="text-blue-500 capitalize">UI Resource</h3>
+
+              <a
+                href="#"
+                class="block mt-2 font-medium text-gray-700 hover:underline hover:text-gray-500 dark:text-gray-400"
+              >
+                Should you creat UI Product by using Blox?
+              </a>
+            </div>
+
+            <hr class="my-6 border-gray-200 dark:border-gray-700" />
+
+            <div>
+              <h3 class="text-blue-500 capitalize">Premium Collection</h3>
+
+              <a
+                href="#"
+                class="block mt-2 font-medium text-gray-700 hover:underline hover:text-gray-500 dark:text-gray-400"
+              >
+                Top 10 Blocks you can get on Blox's collection.
+              </a>
+            </div>
+
+            <hr class="my-6 border-gray-200 dark:border-gray-700" />
+            <script
+              async="async"
+              data-cfasync="false"
+              src="//pl20375140.highcpmrevenuegate.com/dc5086cc7ff662cc7847f13bd3db96d8/invoke.js"
+            ></script>
+            <hr class="my-6 border-gray-200 dark:border-gray-700" />
+
+            <div>
+              <h3 class="text-blue-500 capitalize">Premium kits</h3>
+
+              <a
+                href="#"
+                class="block mt-2 font-medium text-gray-700 hover:underline hover:text-gray-500 dark:text-gray-400"
+              >
+                Top 10 Ui kit you can get on Blox's collection.
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div
+      class="text-white"
+      id="container-dc5086cc7ff662cc7847f13bd3db96d8"
+    ></div>
+
+    <script type="text/javascript">
+      atOptions = {
+        key: "cf75c76c1bb024207b7cb590eac8667a",
+        format: "iframe",
+        height: 250,
+        width: 300,
+        params: {},
+      };
+      document.write(
+        "<scr" +
+          'ipt type="text/javascript" src="http' +
+          (location.protocol === "https:" ? "s" : "") +
+          '://www.profitablecreativeformat.com/cf75c76c1bb024207b7cb590eac8667a/invoke.js"></scr' +
+          "ipt>"
+      );
+    </script>
+
+    <div id="nextBtnDiv" class="flex justify-center items-center p-10">
+      <button
+      onclick="window.location.href='<%= targetUrl %>'"
+        id="nextBtn"
+        class="px-6 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-lg hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80"
+        style="display: none"
+      >
+        Continue
+      </button>
+    </div>
+    <script
+      type="text/javascript"
+      src="//pl20375149.highcpmrevenuegate.com/88/f6/be/88f6be6dfef2a65de4d8b6bc83d892a6.js"
+    ></script>
+  </body>
+</html>
