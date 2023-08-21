@@ -62,6 +62,7 @@
       >
         Continue
       </button>
+      <div id="scrlTxt" class="text-white" style="display: none">Scroll Down to Bottom And Click On Continue</div>
     </div>
 
     <script>
@@ -91,7 +92,7 @@
             timerElement.style.display = "none";
             timerBtn.style.display = "none";
             continueButton.style.display = "block";
-            document.querySelector("#nextBtn").style.display = "block";
+            
           } else {
             updateTimerDisplay();
           }
@@ -101,7 +102,8 @@
       // Add event listener to the continue button
       continueButton.addEventListener("click", () => {
         // Perform action when the button is clicked
-        window.location.href = "#nextBtnDiv";
+        document.querySelector("#scrlTxt").style.display = "block"
+        document.querySelector("#nextBtn").style.display = "block";
       });
 
       // Start the countdown when the page loads
