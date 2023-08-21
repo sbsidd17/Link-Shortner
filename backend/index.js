@@ -7,6 +7,7 @@ import userRoutes from "./routes/user.route.js";
 import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
 import ejs from "ejs"
+import { adminRoute } from "./routes/admin.routes.js";
 
 const app = express();
 app.use(cors({
@@ -19,6 +20,7 @@ app.use(cookieParser())
 
 app.use("/", linkRoutes)
 app.use("/user", userRoutes)
+app.use("/admin", adminRoute)
 
 // Set the view engine to EJS
 app.set('view engine', 'ejs');

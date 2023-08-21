@@ -1,4 +1,5 @@
-const backendUrl = "https://sdlinks.onrender.com"
+
+const backendUrl = process.env.REACT_APP_BACKEND_URL
 
 export {
     backendUrl
